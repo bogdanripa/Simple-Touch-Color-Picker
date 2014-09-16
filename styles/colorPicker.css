@@ -1,0 +1,103 @@
+.colorPicker > div {
+	display: table-row;
+}
+.colorPicker .line-2 > div {
+	border-top: 1px solid #C6C6C6;
+	padding-top: 5px;
+}
+.colorPicker .line-1 > div {
+	padding-bottom: 7px;
+}
+.colorPicker > div  > div {
+	display: table-cell;
+}
+
+.colorPicker .color {
+	width: 44px;
+	height: 44px;
+	border-radius: 22px;
+	margin: 5px;
+}
+
+.colorPicker {
+	display: table;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.colorPicker .line-1 .color.selected {
+	background-image: url("donut.svg");
+}
+
+.colorPicker .line-2 .color.selected, .colorPicker .line-3 .color.selected {
+	background-image: url("check-w.svg");
+}
+
+/* ============================================================================================================================
+== BUBBLE WITH AN ISOCELES TRIANGLE
+** ============================================================================================================================ */
+
+/* THE SPEECH BUBBLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.triangle-isosceles {
+  padding:15px;
+  margin:12px 0;
+  color:#000;
+  background:#fff;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+  border: 1px solid #aaa;
+}
+
+
+/* THE TRIANGLE
+------------------------------------------------------------------------------------------------------------------------------- */
+
+/* creates triangle */
+.triangle-isosceles:after {
+  content:"";
+  position:absolute;
+  bottom:-9px; /* value = - border-top-width - border-bottom-width */
+  border-width:1px 1px 0 0; /* vary these values to change the angle of the vertex */
+  border-style:solid;
+  border-color:#C6C6C6;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:15px;
+  height: 15px;
+  background: #fff;
+
+ -ms-transform: rotate(135deg); /* IE 9 */
+ -webkit-transform: rotate(135deg); /* Chrome, Safari, Opera */
+ transform: rotate(135deg);  
+}
+
+/* Variant : top
+------------------------------------------ */
+
+.triangle-isosceles.top:after {
+  top:-9px; /* value = - border-top-width - border-bottom-width */
+  bottom:auto;
+  left:auto;
+
+ -ms-transform: rotate(-45deg); /* IE 9 */
+ -webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+ transform: rotate(-45deg);  
+}
+
+/* Variant : left
+------------------------------------------ */
+
+.triangle-isosceles.left:after {
+  left:28px; /* controls horizontal position */
+}
+
+/* Variant : right
+------------------------------------------ */
+
+.triangle-isosceles.right:after {
+  right:28px; /* value = - border-left-width - border-right-width */
+}

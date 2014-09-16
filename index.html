@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <title>Simple Color Picker</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+		<script src="js/colorPicker.js"></script>
+		<link rel="stylesheet" type="text/css" href="styles/colorPicker.css">
+		<style>
+			.myColor {
+				position: absolute;
+				left: 50px;
+				top: 150px;
+				width: 50px;
+				height: 50px;
+				background-color: black;
+			}
+			.second.myColor {
+				left: auto;
+				right: 100px;
+				top: 250px;
+				background-color: darkgreen;
+			}
+		</style>
+		<script>
+			$(function() {
+
+			    colorPicker = new ColorPicker();
+
+                $('.myColor').on(MOBILE?'touchstart':'mousedown', clickTouch);
+
+				function clickTouch(e) {
+                    e.stopPropagation();
+                    
+					currentElement = $(this);
+					colorPicker.show($(this), updateColor);
+				}
+
+				function updateColor(newColor) {
+					var newColorStr =  'hsla(' + newColor.get('h') + ',' + newColor.get('s') + '%,' + newColor.get('l') + '%,1)';
+					currentElement.css('background-color', newColorStr);
+				}
+			});
+
+		</script>
+	</head>
+	<body>
+<h1>Simple color picker</h1>
+<p>Touch / click any color to load the color picker, then use it to change the current color</p>
+	<div class="myColor"></div>
+	<div class="second myColor"></div>
+	</body>
+</html>
