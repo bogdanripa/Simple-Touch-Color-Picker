@@ -17,6 +17,7 @@
 	height: 44px;
 	border-radius: 22px;
 	margin: 5px;
+  border: 1px solid #eee;
 }
 
 .colorPicker {
@@ -30,8 +31,12 @@
 	background-image: url("donut.svg");
 }
 
-.colorPicker .line-2 .color.selected, .colorPicker .line-3 .color.selected {
-	background-image: url("check-w.svg");
+.colorPicker .line-2 .color.selected {
+  background-image: url("check-w.svg");
+}
+
+.colorPicker .line-3 .color.selected {
+  background-image: url("check-b.svg");
 }
 
 /* ============================================================================================================================
